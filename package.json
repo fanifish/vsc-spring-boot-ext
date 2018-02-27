@@ -1,0 +1,66 @@
+{
+  "name": "vs-spring-boot-extension",
+  "displayName": "vs-spring-boot-extension",
+  "description": "Using spring-boot embedded tomcat server to run multiple instances os spring app",
+  "version": "0.0.1",
+  "publisher": "fanifanu",
+  "engines": {
+    "vscode": "^1.20.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:extension.createServer",
+    "onView:springServerExplorer"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.createServer",
+        "title": "start Server Instance",
+        "category": "spring-instance",
+        "icon": {
+          "light": "resources/light/add.svg",
+          "dark": "resources/dark/add.svg"
+        }
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "springServerExplorer",
+          "name": "spring-boot Instances"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "extension.createServer",
+          "when": "view == springServerExplorer",
+          "group": "navigation@0"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.6",
+    "tslint": "^5.8.0",
+    "@types/node": "^7.0.43",
+    "@types/mocha": "^2.2.42"
+  },
+  "dependencies": {
+    "vscode-extension-telemetry-wrapper": "^0.2.0",
+    "vscode-nls": "^3.2.1"
+  }
+}

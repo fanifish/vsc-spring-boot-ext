@@ -1,0 +1,20 @@
+{
+    "name": "fani_Servers",
+    "version": "",
+    "configList": [
+        {
+            "configName": "manifestAPI",
+            "port": 8087,
+            "args": "",
+            "hostName": "localhost",
+            "archivePath": "/home/faniel/hack/tools/test/gs-spring-boot/complete/target/gs-spring-boot-0.1.0.jar"
+        },
+        {
+            "configName": "commonAPI",
+            "port": 8089,
+            "args": "",
+            "hostName": "localhost",
+            "archivePath": "/home/faniel/hack/tools/test/gs-spring-boot/complete/target/gs-spring-boot-0.1.0.jar"
+        }
+    ]
+}
